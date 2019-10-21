@@ -48,7 +48,11 @@ const NavbarStandard = () => {
             <NavItem>
               <NavLink tag={Link} to="/methodology">
                 Methodology
-                <span className={`d-${breakpoint}-none`}>Methodology</span>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/pricing">
+                Pricing
               </NavLink>
             </NavItem>
             <NavItem>
