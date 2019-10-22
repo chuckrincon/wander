@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {
   Navbar,
   NavbarToggler,
@@ -20,14 +21,16 @@ import Registration from '../auth/basic/Registration';
 
 const breakpoint = 'lg';
 
-const NavbarStandard = () => {
+const NavbarStandard = ({ hasTransition }) => {
   const [navbarCollapsed, setNavbarCollapsed] = useState(true);
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleNavbarTransparency);
-    return () => window.removeEventListener('scroll', handleNavbarTransparency);
-  }, []);
+    if (hasTransition) {
+      window.addEventListener('scroll', handleNavbarTransparency);
+      return () => window.removeEventListener('scroll', handleNavbarTransparency);
+    }
+  });
 
   return (
     <Navbar
@@ -35,7 +38,7 @@ const NavbarStandard = () => {
       fixed="top"
       expand={breakpoint}
       className={classNames('fs--1 font-weight-semi-bold navbar-standard navbar-theme', {
-        'bg-dark': !navbarCollapsed
+        'bg-dark': !navbarCollapsed || !hasTransition
       })}
     >
       <Container>
@@ -81,3 +84,7 @@ const NavbarStandard = () => {
 };
 
 export default NavbarStandard;
+
+NavbarStandard.propTypes = {
+  hasTransition: PropTypes.bool
+};

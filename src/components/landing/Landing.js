@@ -16,7 +16,7 @@ const Landing = ({ location }) => {
 
   return (
     <Fragment>
-      <NavbarStandard />
+      <NavbarStandard hasTransition />
       <Banner />
       <Partners />
       <Processes />
