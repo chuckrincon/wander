@@ -1,29 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Navbar,
-  NavbarToggler,
-  Nav,
-  NavItem,
-  Collapse,
-  Modal,
-  ModalBody,
-  NavbarBrand,
-  Container,
-  NavLink,
-  CardBody,
-  Card
-} from 'reactstrap';
+import { Navbar, NavbarToggler, Nav, NavItem, Collapse, NavbarBrand, Container, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import handleNavbarTransparency from '../../helpers/handleNavbarTransparency';
-import Registration from '../auth/basic/Registration';
 
 const breakpoint = 'lg';
 
 const NavbarStandard = ({ hasTransition }) => {
   const [navbarCollapsed, setNavbarCollapsed] = useState(true);
-  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
 
   useEffect(() => {
     if (hasTransition) {
@@ -57,24 +42,6 @@ const NavbarStandard = ({ hasTransition }) => {
               <NavLink tag={Link} to="/pricing">
                 Pricing
               </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="#!" onClick={() => setShowRegistrationModal(!showRegistrationModal)}>
-                Register
-              </NavLink>
-              <Modal
-                isOpen={showRegistrationModal}
-                centered
-                toggle={() => setShowRegistrationModal(!showRegistrationModal)}
-              >
-                <ModalBody className="p-0">
-                  <Card>
-                    <CardBody className="fs--1 font-weight-normal p-4">
-                      <Registration />
-                    </CardBody>
-                  </Card>
-                </ModalBody>
-              </Modal>
             </NavItem>
           </Nav>
         </Collapse>

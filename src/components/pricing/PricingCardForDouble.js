@@ -6,20 +6,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Flex from '../common/Flex';
 import { isIterableArray } from '../../helpers/utils';
 
-const PricingRowAlt = ({ isDisable, isLast, children }) => (
+const Row = ({ isDisable, isLast, children }) => (
   <li className={classNames('py-2', { 'border-bottom': !isLast, 'text-300': isDisable })}>
     <FontAwesomeIcon icon="check" transform="shrink-2" className={classNames({ 'text-primary': !isDisable })} />{' '}
     {children}
   </li>
 );
 
-PricingRowAlt.propTypes = {
+Row.propTypes = {
   isDisable: PropTypes.bool,
   isLast: PropTypes.bool,
   children: PropTypes.node
 };
 
-const PricingCardAlt = ({ type, price, image, features, button, isYearly }) => {
+const PricingCardForDouble = ({ type, price, image, features, button, isYearly }) => {
   const plan = isYearly ? 'year' : 'month';
 
   return (
@@ -41,9 +41,9 @@ const PricingCardAlt = ({ type, price, image, features, button, isYearly }) => {
         <ul className="list-unstyled">
           {isIterableArray(features) &&
             features.map((feature, index) => (
-              <PricingRowAlt isDisable={feature.isDisable} key={index} isLast={features.length === index + 1}>
+              <Row isDisable={feature.isDisable} key={index} isLast={features.length === index + 1}>
                 {feature.title}
-              </PricingRowAlt>
+              </Row>
             ))}
         </ul>
         <Button color={button.color} block>
@@ -54,7 +54,7 @@ const PricingCardAlt = ({ type, price, image, features, button, isYearly }) => {
   );
 };
 
-PricingCardAlt.propTypes = {
+PricingCardForDouble.propTypes = {
   type: PropTypes.string.isRequired,
   price: PropTypes.object.isRequired,
   isYearly: PropTypes.bool.isRequired,
@@ -63,4 +63,4 @@ PricingCardAlt.propTypes = {
   button: PropTypes.object.isRequired
 };
 
-export default PricingCardAlt;
+export default PricingCardForDouble;

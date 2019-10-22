@@ -6,6 +6,7 @@ import { CloseButton, Fade } from '../components/common/Toast';
 import loadable from '@loadable/component';
 const Landing = loadable(() => import('../components/landing/Landing'));
 const Pricing = loadable(() => import('../components/pricing/Pricing'));
+const Methodology = loadable(() => import('../components/methodology/Methodology'));
 
 const Layout = () => {
   useEffect(() => {
@@ -15,7 +16,7 @@ const Layout = () => {
   return (
     <Router fallback={<span />}>
       <Switch>
-        <Route path="/methodology" exact component={Landing} />
+        <Route path="/methodology" exact component={Methodology} />
         <Route path="/pricing" exact component={Pricing} />
         <Route component={Landing} />
       </Switch>
