@@ -12,7 +12,7 @@ const Pricing = () => {
   return (
     <>
       <NavbarStandard />
-      <Container style={{ marginTop: '120px', marginBottom: '16px' }}>
+      <Container style={{ marginTop: '90px', marginBottom: '16px' }}>
         <Card>
           <CardBody className="overflow-hidden p-lg-6">
             <Row className="align-items-center justify-content-between">

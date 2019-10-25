@@ -14,7 +14,7 @@ const Pricing = () => {
   return (
     <>
       <NavbarStandard />
-      <Container style={{ marginTop: '60px' }}>
+      <Container style={{ marginTop: '90px' }}>
         <Card className="mb-3">
           <CardBody>
             <Row className="justify-content-center">
