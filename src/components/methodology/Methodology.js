@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Modal, ModalBody, CardBody, Card } from 'reactstrap';
 import NavbarStandard from '../navbar/NavbarStandard';
 import FooterStandard from '../landing/FooterStandard';
-import Registration from '../auth/basic/Registration';
+import Login from '../auth/basic/Login';
 import img_login from '../../assets/img/illustrations/creating.png';
 
 const Pricing = () => {
-  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   return (
     <>
@@ -29,19 +29,15 @@ const Pricing = () => {
                   tag={Link}
                   to="#!"
                   className="btn btn-falcon-primary"
-                  onClick={() => setShowRegistrationModal(!showRegistrationModal)}
+                  onClick={() => setShowLoginModal(!showLoginModal)}
                 >
-                  Register
+                  Log In
                 </Link>
-                <Modal
-                  isOpen={showRegistrationModal}
-                  centered
-                  toggle={() => setShowRegistrationModal(!showRegistrationModal)}
-                >
+                <Modal isOpen={showLoginModal} centered toggle={() => setShowLoginModal(!showLoginModal)}>
                   <ModalBody className="p-0">
                     <Card>
                       <CardBody className="fs--1 font-weight-normal p-4">
-                        <Registration />
+                        <Login />
                       </CardBody>
                     </Card>
                   </ModalBody>
