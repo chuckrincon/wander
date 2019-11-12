@@ -2,14 +2,17 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import createMarkup from '../../helpers/createMarkup';
 import Section from '../common/Section';
-import IconGroup from '../common/icon/IconGroup';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { blogPostList, iconList, menuList1, menuList2 } from '../../data/footer';
 import { animateScroll } from 'react-scroll';
 import { version } from '../../config';
 
+const NAVLINKS = [
+  { title: 'Demo', to: 'demo' },
+  { title: 'Methodology', to: 'methodology' },
+  { title: 'Pricing', to: 'pricing' }
+];
 const FooterTitle = ({ children }) => <h5 className="text-uppercase text-light mb-3">{children}</h5>;
 
 FooterTitle.propTypes = { children: PropTypes.node.isRequired };
@@ -55,29 +58,21 @@ const FooterStandard = () => {
           <FontAwesomeIcon icon="chevron-up" transform="rotate-45" className="text-light" />
         </div>
         <Row>
-          <Col lg={4}>
+          <Col lg={5}>
             <FooterTitle>Our Mission</FooterTitle>
             <p className="text-400">
-              Falcon enables front end developers to build custom streamlined user interfaces in a matter of hours,
-              while it gives backend developers all the UI elements they need to develop their web app. And it's robust
-              design can be easily integrated with backends whether your app is based on ruby on rails, laravel, express
-              or any other serverside system.
+              Customers, staff, and shareholders cannot properly participate in DER discussions without understanding
+              the true impacts. Some are positive. Some are negative. Some are negligible. Which one is yours?
             </p>
-            <IconGroup className="mt-4" icons={iconList} />
           </Col>
-          <Col className="pl-lg-6 pl-xl-8">
+          <Col lg={{ size: 5, offset: 2 }}>
             <Row className="mt-5 mt-lg-0">
-              <Col xs={6} md={3}>
+              <Col xs={6}>
                 <FooterTitle>Company</FooterTitle>
-                <FooterList list={menuList1} />
               </Col>
-              <Col xs={6} md={3}>
+              <Col xs={6}>
                 <FooterTitle>Product</FooterTitle>
-                <FooterList list={menuList2} />
-              </Col>
-              <Col className="mt-5 mt-md-0">
-                <FooterTitle>From the Blog</FooterTitle>
-                <FooterBlogList list={blogPostList} />
+                <FooterList list={NAVLINKS} />
               </Col>
             </Row>
           </Col>
@@ -87,10 +82,9 @@ const FooterStandard = () => {
         <Row className="justify-content-between">
           <Col xs={12} sm="auto">
             <p className="mb-0">
-              Thank you for creating with Falcon <span className="d-none d-sm-inline-block">| </span>
               <br className="d-sm-none" /> {new Date().getFullYear()} &copy;{' '}
-              <a className="text-700" href="https://themewagon.com" target="_blank" rel="noopener noreferrer">
-                ThemeWagon
+              <a className="text-700" href="https://bellawatt.com" target="_blank" rel="noopener noreferrer">
+                Bellawatt, Inc.
               </a>
             </p>
           </Col>
