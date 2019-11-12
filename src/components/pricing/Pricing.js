@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Card, CardBody, Col, CustomInput, Label, Row } from 'reactstrap';
 import NavbarStandard from '../navbar/NavbarStandard';
@@ -9,8 +9,6 @@ import pricingAlt from '../../data/pricing/pricingAlt';
 import Flex from '../common/Flex';
 
 const Pricing = () => {
-  const [isYearly, setIsYearly] = useState(true);
-
   return (
     <>
       <NavbarStandard />
@@ -19,39 +17,26 @@ const Pricing = () => {
           <CardBody>
             <Row className="justify-content-center">
               <Col xs={12} className="text-center mb-4">
-                <div className="fs-1">Falcon Pricing</div>
+                <div className="fs-1">Disrupder Pricing</div>
                 <h3 className="fs-2 fs-md-3">
-                  Free plan with all the basic features. <br className="d-none d-md-block" />
+                  Awesome with all the basic features. <br className="d-none d-md-block" />
                   Pro plan for advanced users.
                 </h3>
-                <Flex align="center" justify="center" className="fs--1">
-                  <Label className="mr-2 mb-0" htmlFor="customSwitch1">
-                    Monthly
-                  </Label>
-                  <CustomInput
-                    type="switch"
-                    id="customSwitch1"
-                    label="Yearly"
-                    checked={isYearly}
-                    onChange={() => setIsYearly(!isYearly)}
-                  />
-                </Flex>
               </Col>
               <Col xs={12} lg={8}>
                 <Row>
                   {isIterableArray(pricingAlt) &&
                     pricingAlt.map((pricingCard, index) => (
                       <Col xs={12} md key={index}>
-                        <PricingCardForDouble {...pricingCard} isYearly={isYearly} />
+                        <PricingCardForDouble {...pricingCard} />
                       </Col>
                     ))}
                 </Row>
               </Col>
               <Col xs={12} className="text-center">
-                <h5 className="mt-5">Looking for personal or small team task management?</h5>
-                <p className="fs-1">
-                  Try the <Link to="#!">basic version</Link> of Falcon
-                </p>
+                <h5 className="mt-5">
+                  To register, please reach out to <a href="mailto:eugene@bellawatt.com">eugene@bellawatt.com</a>.
+                </h5>
               </Col>
             </Row>
           </CardBody>

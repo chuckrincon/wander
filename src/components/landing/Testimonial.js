@@ -13,11 +13,18 @@ import testimonials from '../../data/testimonial/testimonialList';
 const TestimonialItem = ({ description, author, designation, companyImage }) => {
   return (
     <div className="px-5 px-sm-6">
-      <p className="fs-sm-1 fs-md-2 font-italic text-dark">{description}</p>
+      <p className="fs-sm-1 fs-md-2 font-italic text-dark">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
       <p className="fs-0 text-600">
         - {author}, {designation}
       </p>
-      <img className="w-auto mx-auto" src={companyImage} alt="" height="30" />
+      {/* <img className="w-auto mx-auto" src={companyImage} alt="" height="30" /> */}
     </div>
   );
 };

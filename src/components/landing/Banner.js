@@ -28,8 +28,8 @@ const Banner = () => {
           <p className="lead text-white">
             Determine the financial impacts of DER penetration on your utility and its customers.
           </p>
-          <Link className="btn btn-outline-light border-2x btn-lg fs-0 py-2" to="/pricing">
-            Register
+          <Link className="btn btn-outline-light border-2x btn-lg fs-0 py-2" to="/demo">
+            View Demo
             <FontAwesomeIcon icon="play" transform="shrink-6 down-1 right-5" />
           </Link>
         </Col>

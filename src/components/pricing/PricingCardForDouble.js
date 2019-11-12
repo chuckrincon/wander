@@ -19,9 +19,7 @@ Row.propTypes = {
   children: PropTypes.node
 };
 
-const PricingCardForDouble = ({ type, price, image, features, button, isYearly }) => {
-  const plan = isYearly ? 'year' : 'month';
-
+const PricingCardForDouble = ({ type, price, image, features, button }) => {
   return (
     <div className="border rounded-soft overflow-hidden mb-3 mb-md-0">
       <Flex align="center" justify="between" className="p-4">
@@ -29,8 +27,8 @@ const PricingCardForDouble = ({ type, price, image, features, button, isYearly }
           <h3 className="font-weight-light fs-5 mb-0 text-primary">{type}</h3>
           <h2 className="font-weight-light mt-0 text-primary">
             <sup className="fs-1">$</sup>
-            <span className="fs-3">{price[plan]}</span>
-            <span className="fs--2 mt-1">/ {plan}</span>
+            <span className="fs-3">{price}</span>
+            <span className="fs--2 mt-1">/mo</span>
           </h2>
         </div>
         <div className="pr-3">

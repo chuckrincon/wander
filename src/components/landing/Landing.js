@@ -2,7 +2,6 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import NavbarStandard from '../navbar/NavbarStandard';
 import Banner from './Banner';
-import Partners from './Partners';
 import Processes from './Processes';
 import Services from './Services';
 import Testimonial from './Testimonial';
@@ -18,11 +17,10 @@ const Landing = ({ location }) => {
     <Fragment>
       <NavbarStandard hasTransition />
       <Banner />
-      <Partners />
-      <Processes />
-      <Services />
+      {/* <Processes /> */}
+      {/* <Services /> */}
       <Testimonial />
-      <Cta />
+      {/* <Cta /> */}
       <FooterStandard />
     </Fragment>
   );

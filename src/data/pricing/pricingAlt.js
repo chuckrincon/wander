@@ -4,20 +4,12 @@ import startup from '../../assets/img/illustrations/startup.svg';
 export default [
   {
     type: 'Free',
-    price: {
-      month: 0,
-      year: 0
-    },
+    price: 0,
     image: paperPlane,
     features: [
-      { title: 'Unlimited Broadcasts' },
-      { title: 'Unlimited Sequences' },
-      { title: 'Advanced marketing' },
-      { title: 'Api & Developer Tools' },
-      { title: 'Integrations', isDisable: true },
-      { title: 'Payments', isDisable: true },
-      { title: 'Unlimited Tags', isDisable: true },
-      { title: 'Custom Fields', isDisable: true }
+      { title: 'A single scenario' },
+      { title: 'Pick between a single DER' },
+      { title: 'Other stuff', isDisable: true }
     ],
     button: {
       text: 'Start free trial',
@@ -25,21 +17,16 @@ export default [
     }
   },
   {
-    type: 'Pro',
-    price: {
-      month: 11,
-      year: 99
-    },
+    type: 'Per Utility',
+    price: '2.5k',
     image: startup,
     features: [
-      { title: 'Unlimited Broadcasts' },
-      { title: 'Unlimited Sequences' },
-      { title: 'Advanced marketing' },
-      { title: 'Api & Developer Tools' },
-      { title: 'Integrations' },
-      { title: 'Payments' },
-      { title: 'Unlimited Tags' },
-      { title: 'Custom Fields' }
+      { title: 'Unlimited scenarios' },
+      { title: 'Unlimited DER combinations' },
+      {
+        title:
+          'Detailed Revenue Requirement: differentiate between Generation, Transmission, Distribution, and/or Customer cost functions'
+      }
     ],
     button: {
       text: 'Purchase Now',
