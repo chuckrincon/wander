@@ -13,19 +13,22 @@ const Banner = () => {
       <Row className="justify-content-center align-items-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
         <Col md={12} lg={8} xl={5} className="pb-7 pb-xl-9 text-center text-xl-left">
           <h1 className="text-white font-weight-light">
-            Calculate the impact of
-            <Typed
-              strings={['Residential Solar', 'Electric Vehicles', 'Battery Storage']}
-              typeSpeed={40}
-              backSpeed={50}
-              className="font-weight-bold pl-2"
-              loop
-            />
+            The impacts of
+            <br />
+            <span style={{ display: 'inline-block', minHeight: '100px' }}>
+              <Typed
+                strings={['Residential Solar', 'Electric Vehicles', 'Battery Storage']}
+                typeSpeed={40}
+                backSpeed={50}
+                className="font-weight-bold"
+                loop
+              />
+            </span>
           </h1>
-          <p className="lead" style={{ color: '#222' }}>
-            Determine the impact of DER penetration on your utility and its customers.
+          <p className="lead text-white">
+            Determine the financial impacts of DER penetration on your utility and its customers.
           </p>
-          <Link className="btn btn-outline-light border-2x rounded-pill btn-lg mt-4 fs-0 py-2" to="/pricing">
+          <Link className="btn btn-outline-light border-2x btn-lg fs-0 py-2" to="/pricing">
             Register
             <FontAwesomeIcon icon="play" transform="shrink-6 down-1 right-5" />
           </Link>
