@@ -1,98 +1,202 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Row, Col, Card, CardBody, Button, InputGroup, CustomInput } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import {
+  Card,
+  CardBody,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  CustomInput,
+  Row,
+  Col
+} from 'reactstrap';
 import CountUp from 'react-countup';
 import CardSummary from './CardSummary';
-import ActiveUsersBarChart from './ActiveUsersBarChart';
 import PaymentsLineChart from './PaymentsLineChart';
-import { toast } from 'react-toastify';
 import FalconCardHeader from '../common/FalconCardHeader';
-import ButtonIcon from '../common/ButtonIcon';
-
-import loadable from '@loadable/component';
-const PurchasesTable = loadable(() => import('./PurchasesTable'));
-const ActiveUsersMap = loadable(() => import('./ActiveUsersMap'));
 
 const Dashboard = () => {
-  // State
-  const [isSelected, setIsSelected] = useState(false);
-
-  useEffect(() => {
-    toast(
-      <Fragment>
-        Welcome to <strong>Falcon React</strong>!<br />
-        ReactJS Dashboard and WebApp Template
-      </Fragment>
-    );
-  }, []);
+  const [pvEscalation, setPvEscalation] = useState(100);
+  const [evEscalation, setEvEscalation] = useState(100);
+  const [storageEscalation, setStorageEscalation] = useState(100);
 
   return (
-    <Fragment>
+    <>
       <PaymentsLineChart />
-      <Card className="bg-light mb-3">
-        <CardBody className="p-3">
-          <p className="fs--1 mb-0">
-            <Link to="#!">
-              <FontAwesomeIcon icon="exchange-alt" transform="rotate-90" className="mr-2" />A payout for{' '}
-              <strong>$921.42</strong> was deposited 13 days ago
-            </Link>
-            . Your next deposit is expected on <strong>Tuesday, March 13.</strong>
-          </p>
-        </CardBody>
-      </Card>
+
       <div className="card-deck">
-        <CardSummary rate="-0.23%" title="Customers" color="warning" linkText="See all">
+        <CardSummary rate="-0.23%" title="A Metric" color="warning">
           58.39k
         </CardSummary>
-        <CardSummary rate="0.0%" title="Orders" color="info" linkText="All orders">
+        <CardSummary rate="0.0%" title="Another Metric" color="info">
           73.46k
         </CardSummary>
-        <CardSummary content="43,594" rate="9.54%" title="Revenue" color="success" linkText="Statistics">
+        <CardSummary content="43,594" rate="9.54%" title="Supporting Metric(s)" color="success">
           <CountUp end={43594} duration={5} prefix="$" separator="," decimal="." />
         </CardSummary>
       </div>
       <Card className="mb-3">
-        <FalconCardHeader title="Recent Purchases" light={false}>
-          {isSelected ? (
-            <InputGroup size="sm" className="input-group input-group-sm">
-              <CustomInput type="select" id="bulk-select">
-                <option>Bulk actions</option>
-                <option value="Refund">Refund</option>
-                <option value="Delete">Delete</option>
-                <option value="Archive">Archive</option>
-              </CustomInput>
-              <Button color="falcon-default" size="sm" className="ml-2">
-                Apply
-              </Button>
-            </InputGroup>
-          ) : (
-            <Fragment>
-              <ButtonIcon icon="plus" transform="shrink-3 down-2" color="falcon-default" size="sm">
-                New
-              </ButtonIcon>
-              <ButtonIcon icon="filter" transform="shrink-3 down-2" color="falcon-default" size="sm" className="mx-2">
-                Filter
-              </ButtonIcon>
-              <ButtonIcon icon="external-link-alt" transform="shrink-3 down-2" color="falcon-default" size="sm">
-                Export
-              </ButtonIcon>
-            </Fragment>
-          )}
-        </FalconCardHeader>
-        <CardBody className="p-0">
-          <PurchasesTable setIsSelected={setIsSelected} />
+        <FalconCardHeader title="Inputs & Controls" light={false} />
+        <CardBody>
+          <Form>
+            <Row>
+              <Col sm={2} className="mb-3">
+                <p className="h3">PVs</p>
+              </Col>
+              <Col sm={5} className="mb-3">
+                <FormGroup>
+                  <Label for="pv-penetration-today">Today</Label>
+                  <InputGroup>
+                    <Input
+                      type="number"
+                      name="pv-penetration"
+                      id="pv-penetration-today"
+                      placeholder="PV Penetration Today"
+                      step="100"
+                    />
+                    <InputGroupAddon addonType="append">
+                      <InputGroupText>kW</InputGroupText>
+                    </InputGroupAddon>
+                  </InputGroup>
+                </FormGroup>
+              </Col>
+              <Col sm={5} className="mb-3">
+                <FormGroup>
+                  <Label for="pv-escalation">
+                    Escalation Rate
+                    <span className={`badge badge-secondary rounded-capsule ml-2`}>{pvEscalation}%</span>
+                  </Label>
+                  <CustomInput
+                    type="range"
+                    id="pv-escalation"
+                    name="pv-escalation"
+                    min="0"
+                    max="300"
+                    value={pvEscalation}
+                    step="10"
+                    onChange={e => setPvEscalation(e.target.value)}
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <hr />
+
+            <Row>
+              <Col sm={2} className="mb-3">
+                <p className="h3">EVs</p>
+              </Col>
+              <Col sm={5} className="mb-3">
+                <FormGroup>
+                  <Label for="pv-penetration-today">Today</Label>
+                  <InputGroup>
+                    <Input
+                      type="number"
+                      name="ev-penetration"
+                      id="ev-penetration-today"
+                      placeholder="PV Penetration Today"
+                      step="100"
+                    />
+                    <InputGroupAddon addonType="append">
+                      <InputGroupText>kW</InputGroupText>
+                    </InputGroupAddon>
+                  </InputGroup>
+                </FormGroup>
+              </Col>
+              <Col sm={5} className="mb-3">
+                <FormGroup>
+                  <Label for="ev-escalation">
+                    Escalation Rate
+                    <span className={`badge badge-secondary rounded-capsule ml-2`}>{evEscalation}%</span>
+                  </Label>
+                  <CustomInput
+                    type="range"
+                    id="ev-escalation"
+                    name="ev-escalation"
+                    min="0"
+                    max="300"
+                    value={evEscalation}
+                    step="10"
+                    onChange={e => setEvEscalation(e.target.value)}
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <hr />
+
+            <Row>
+              <Col sm={2} className="mb-3">
+                <p className="h3">Batteries</p>
+              </Col>
+              <Col sm={5} className="mb-3">
+                <FormGroup>
+                  <Label for="storage-penetration-today">Today</Label>
+                  <InputGroup>
+                    <Input
+                      type="number"
+                      name="storage-penetration"
+                      id="storage-penetration-today"
+                      placeholder="PV Penetration Today"
+                      step="100"
+                    />
+                    <InputGroupAddon addonType="append">
+                      <InputGroupText>kW</InputGroupText>
+                    </InputGroupAddon>
+                  </InputGroup>
+                </FormGroup>
+              </Col>
+              <Col sm={5} className="mb-3">
+                <FormGroup>
+                  <Label for="storage-escalation">
+                    Escalation Rate
+                    <span className={`badge badge-secondary rounded-capsule ml-2`}>{storageEscalation}%</span>
+                  </Label>
+                  <CustomInput
+                    type="range"
+                    id="storage-escalation"
+                    name="storage-escalation"
+                    min="0"
+                    max="300"
+                    value={storageEscalation}
+                    step="10"
+                    onChange={e => setStorageEscalation(e.target.value)}
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <hr />
+          </Form>
         </CardBody>
       </Card>
-      <Row noGutters>
-        <Col lg="4" className="pr-lg-2">
-          <ActiveUsersBarChart />
-        </Col>
-        <Col lg="8" className="pl-lg-2">
-          <ActiveUsersMap />
-        </Col>
-      </Row>
-    </Fragment>
+
+      <Card className="mb-3">
+        <FalconCardHeader title="Utility Info" light={false} />
+        <CardBody>
+          <Form>
+            <Row>
+              <Col sm="6">
+                <Label for="avoided_cost">Avoided Cost</Label>
+                <InputGroup>
+                  <InputGroupAddon addonType="prepend">$</InputGroupAddon>
+                  <Input id="avoided_cost" type="number" step="1" />
+                  <InputGroupAddon addonType="append">/kWh</InputGroupAddon>
+                </InputGroup>
+              </Col>
+              <Col sm="6">
+                <Label for="rev_requirement">Revenue Requirement</Label>
+                <InputGroup>
+                  <InputGroupAddon addonType="prepend">$</InputGroupAddon>
+                  <Input id="rev_requirement" type="number" step="1" />
+                  <InputGroupAddon addonType="append">.00</InputGroupAddon>
+                </InputGroup>
+              </Col>
+            </Row>
+          </Form>
+        </CardBody>
+      </Card>
+    </>
   );
 };
 

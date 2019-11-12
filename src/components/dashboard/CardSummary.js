@@ -28,6 +28,13 @@ const getContentClassNames = color => {
 };
 
 const CardSummary = ({ title, rate, linkText, to, color, children }) => {
+  const renderLinkText = linkText ? (
+    <Link className="font-weight-semi-bold fs--1 text-nowrap" to={to}>
+      {linkText}
+      <FontAwesomeIcon icon="angle-right" transform="down-1.5" className="ml-1" />
+    </Link>
+  ) : null;
+
   return (
     <Card className="mb-3 overflow-hidden" style={{ minWidth: '12rem' }}>
       <Background image={getImage(color)} className="bg-card" />
@@ -37,10 +44,7 @@ const CardSummary = ({ title, rate, linkText, to, color, children }) => {
           <span className={`badge badge-soft-${color} rounded-capsule ml-2`}>{rate}</span>
         </h6>
         <div className={getContentClassNames(color)}>{children}</div>
-        <Link className="font-weight-semi-bold fs--1 text-nowrap" to={to}>
-          {linkText}
-          <FontAwesomeIcon icon="angle-right" transform="down-1.5" className="ml-1" />
-        </Link>
+        {renderLinkText}
       </CardBody>
     </Card>
   );
@@ -56,7 +60,6 @@ CardSummary.propTypes = {
 };
 
 CardSummary.defaultProps = {
-  linkText: 'See all',
   to: '#!',
   color: 'primary'
 };

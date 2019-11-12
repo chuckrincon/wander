@@ -34,6 +34,11 @@ const NavbarStandard = ({ hasTransition }) => {
         <Collapse isOpen={!navbarCollapsed} navbar>
           <Nav navbar className="ml-auto">
             <NavItem>
+              <NavLink tag={Link} to="/demo">
+                Demo
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink tag={Link} to="/methodology">
                 Methodology
               </NavLink>
