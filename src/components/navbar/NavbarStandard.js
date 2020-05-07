@@ -4,6 +4,7 @@ import { Navbar, NavbarToggler, Nav, NavItem, Collapse, NavbarBrand, Container, 
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import handleNavbarTransparency from '../../helpers/handleNavbarTransparency';
+import wander from '../../assets/img/wander.svg';
 
 const breakpoint = 'lg';
 
@@ -28,7 +29,7 @@ const NavbarStandard = ({ hasTransition }) => {
     >
       <Container>
         <NavbarBrand className="text-white" tag={Link} to="/">
-          disrupDER
+          <img src={wander} alt="wander logo" style={{ height: '50px' }} /> wander
         </NavbarBrand>
         <NavbarToggler onClick={() => setNavbarCollapsed(!navbarCollapsed)} />
         <Collapse isOpen={!navbarCollapsed} navbar>
