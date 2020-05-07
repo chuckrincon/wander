@@ -5,7 +5,7 @@ import { CloseButton, Fade } from '../components/common/Toast';
 
 import loadable from '@loadable/component';
 const Landing = loadable(() => import('../components/landing/Landing'));
-const Antler = loadable(() => import('../components/methodology/Methodology'));
+const Antler = loadable(() => import('../components/properties/antler/Antler'));
 
 const Layout = () => {
   useEffect(() => {
