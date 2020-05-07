@@ -17,7 +17,7 @@ const Pricing = () => {
           <CardBody>
             <Row className="justify-content-center">
               <Col xs={12} className="text-center mb-4">
-                <div className="fs-1">Disrupder Pricing</div>
+                <div className="fs-1">Wander Pricing</div>
                 <h3 className="fs-2 fs-md-3">
                   Awesome with all the basic features. <br className="d-none d-md-block" />
                   Pro plan for advanced users.
