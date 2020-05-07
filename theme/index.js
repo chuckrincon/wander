@@ -3,7 +3,7 @@ import 'react-app-polyfill/stable';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '..';
+import App from '../src';
 import Main from './Main';
 import './helpers/initFA';
 
