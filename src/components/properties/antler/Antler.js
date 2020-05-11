@@ -5,6 +5,7 @@ import ProfileAside from './ProfileAside';
 import ProfileContent from './ProfileContent';
 import ProfileFooter from './ProfileFooter';
 import NavbarStandard from '../../navbar/NavbarStandard';
+import FooterStandard from '../../landing/FooterStandard';
 
 const Antler = () => {
   return (
@@ -13,6 +14,7 @@ const Antler = () => {
       <ContentWithAsideLayout banner={<ProfileBanner />} aside={<ProfileAside />} footer={<ProfileFooter />}>
         <ProfileContent />
       </ContentWithAsideLayout>
+      <FooterStandard />
     </>
   );
 };

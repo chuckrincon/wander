@@ -1,8 +1,17 @@
 {
-  "extends": ["react-app", "prettier", "plugin:react/recommended"],
+  "extends": ["airbnb", "airbnb/hooks", "prettier"],
+  "env": {
+    "browser": true
+  },
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "react/no-unescaped-entities": false
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+    "no-shadow": [0, {}],
+    "react/jsx-props-no-spreading": [0],
+    "react/require-default-props": [0],
+    "react/forbid-prop-types": [0],
+    "react/jsx-one-expression-per-line": [0],
+    "react/jsx-wrap-multilines": [1, {"prop": "ignore"}]
   }
 }

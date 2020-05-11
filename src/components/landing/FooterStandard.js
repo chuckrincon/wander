@@ -1,25 +1,20 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import createMarkup from '../../helpers/createMarkup';
 import Section from '../common/Section';
-import { Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { animateScroll } from 'react-scroll';
-import { version } from '../../config';
+import {Row, Col} from 'reactstrap';
+import {Link} from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {animateScroll} from 'react-scroll';
+import {version} from '../../config';
 
-const NAVLINKS = [
-  { title: 'Demo', to: 'demo' },
-  { title: 'Methodology', to: 'methodology' },
-  { title: 'Pricing', to: 'pricing' }
-];
-const FooterTitle = ({ children }) => <h5 className="text-uppercase text-light mb-3">{children}</h5>;
+const FooterTitle = ({children}) => <h5 className="text-uppercase text-light mb-3">{children}</h5>;
 
-FooterTitle.propTypes = { children: PropTypes.node.isRequired };
+FooterTitle.propTypes = {children: PropTypes.node.isRequired};
 
-const FooterList = ({ list }) => (
+const FooterList = ({list}) => (
   <ul className="list-unstyled">
-    {list.map(({ title, to }, index) => (
+    {list.map(({title, to}, index) => (
       <li className="mb-1" key={index}>
         <Link className="text-400" to={to}>
           {title}
@@ -29,9 +24,9 @@ const FooterList = ({ list }) => (
   </ul>
 );
 
-FooterList.propTypes = { list: PropTypes.array.isRequired };
+FooterList.propTypes = {list: PropTypes.array.isRequired};
 
-const FooterBlogList = ({ list }) => (
+const FooterBlogList = ({list}) => (
   <ul className="list-unstyled">
     {list.map((blog, index) => (
       <li key={index}>
@@ -41,40 +36,34 @@ const FooterBlogList = ({ list }) => (
           </Link>
         </h5>
         <p>
-          {blog.date} &bull; {blog.read} read {blog.star && <span dangerouslySetInnerHTML={createMarkup('&starf;')} />}
+          {blog.date} &bull; {blog.read} read{' '}
+          {blog.star && <span dangerouslySetInnerHTML={createMarkup('&starf;')} />}
         </p>
       </li>
     ))}
   </ul>
 );
 
-FooterBlogList.propTypes = { list: PropTypes.array.isRequired };
+FooterBlogList.propTypes = {list: PropTypes.array.isRequired};
 
 const FooterStandard = () => {
   return (
     <Fragment>
       <Section bg="dark" className="pt-8 pb-4">
-        <div className="position-absolute btn-back-to-top cursor-pointer" onClick={animateScroll.scrollToTop}>
+        <div
+          className="position-absolute btn-back-to-top cursor-pointer"
+          onClick={animateScroll.scrollToTop}
+        >
           <FontAwesomeIcon icon="chevron-up" transform="rotate-45" className="text-light" />
         </div>
         <Row>
-          <Col lg={5}>
-            <FooterTitle>Our Mission</FooterTitle>
-            <p className="text-400">
-              Customers, staff, and shareholders cannot properly participate in DER discussions without understanding
-              the true impacts. Some are positive. Some are negative. Some are negligible. Which one is yours?
-            </p>
+          <Col lg={8}>
+            <p className="text-400">Wander away. In your own way.</p>
           </Col>
-          <Col lg={{ size: 5, offset: 2 }}>
-            <Row className="mt-5 mt-lg-0">
-              <Col xs={6}>
-                <FooterTitle>Company</FooterTitle>
-              </Col>
-              <Col xs={6}>
-                <FooterTitle>Product</FooterTitle>
-                <FooterList list={NAVLINKS} />
-              </Col>
-            </Row>
+          <Col lg={{size: 4}} className="text-right">
+            <a className="btn btn-secondary" href="mailto:svet.vaisman@gmail.com">
+              Email Us
+            </a>
           </Col>
         </Row>
       </Section>
@@ -83,7 +72,12 @@ const FooterStandard = () => {
           <Col xs={12} sm="auto">
             <p className="mb-0">
               <br className="d-sm-none" /> {new Date().getFullYear()} &copy;{' '}
-              <a className="text-700" href="https://bellawatt.com" target="_blank" rel="noopener noreferrer">
+              <a
+                className="text-700"
+                href="https://bellawatt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Bellawatt, Inc.
               </a>
             </p>

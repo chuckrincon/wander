@@ -1,8 +1,8 @@
 import React from 'react';
 import Typed from 'react-typed';
-import { Link } from 'react-router-dom';
-import { Row, Col } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Link} from 'react-router-dom';
+import {Row, Col} from 'reactstrap';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import bg1 from '../../assets/img/properties/antler/d.jpeg';
 import Section from '../common/Section';
 
@@ -13,7 +13,7 @@ const Banner = () => {
         <Col md={12} lg={8} xl={5} className="pb-7 pb-xl-9 text-center text-xl-left">
           <h1 className="text-white font-weight-light">
             Wander{' '}
-            <span style={{ display: 'inline-block', minHeight: '100px' }}>
+            <span style={{display: 'inline-block', minHeight: '100px'}}>
               <Typed
                 strings={['away', 'home', 'somewhere', 'anywhere']}
                 typeSpeed={80}
@@ -23,7 +23,7 @@ const Banner = () => {
               />
             </span>
           </h1>
-          <p className="lead text-white">Get away. In your own way.</p>
+          {/* <p className="lead text-white">Get away. In your own way.</p> */}
         </Col>
       </Row>
     </Section>
