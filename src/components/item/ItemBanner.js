@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Card } from 'reactstrap';
+import {Card} from 'reactstrap';
 import ItemBannerHeader from './ItemBannerHeader';
 import ItemBannerBody from './ItemBannerBody';
 
@@ -13,6 +13,6 @@ class ItemBanner extends Component {
   }
 }
 
-ItemBanner.propTypes = { children: PropTypes.node };
+ItemBanner.propTypes = {children: PropTypes.node};
 
 export default ItemBanner;

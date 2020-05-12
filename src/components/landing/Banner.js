@@ -1,14 +1,12 @@
 import React from 'react';
 import Typed from 'react-typed';
-import {Link} from 'react-router-dom';
 import {Row, Col} from 'reactstrap';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import bg1 from '../../assets/img/properties/antler/d.jpeg';
+import banner from '../../assets/img/banner.jpeg';
 import Section from '../common/Section';
 
 const Banner = () => {
   return (
-    <Section className="py-0 overflow-hidden" image={bg1} position="center bottom" overlay>
+    <Section className="py-0 overflow-hidden" image={banner} position="center bottom" overlay>
       <Row className="justify-content-center align-items-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
         <Col md={12} lg={8} xl={5} className="pb-7 pb-xl-9 text-center text-xl-left">
           <h1 className="text-white font-weight-light">

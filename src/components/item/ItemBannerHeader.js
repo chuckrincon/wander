@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import { CardHeader, Input, Label } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {CardHeader, Input, Label} from 'reactstrap';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Background from '../common/Background';
 import Avatar from '../common/Avatar';
 
-const ProfileBannerHeader = ({ coverSrc, avatarSrc, isEditable }) => {
+const ProfileBannerHeader = ({coverSrc, avatarSrc, isEditable}) => {
   return (
-    <CardHeader className={`position-relative min-vh-25 ${isEditable ? 'mb-8' : 'mb-7'}`}>
+    <CardHeader className={`position-relative min-vh-50 ${isEditable ? 'mb-8' : 'mb-7'}`}>
       {isEditable ? (
         <Fragment>
           <div className="cover-image">
@@ -52,9 +52,9 @@ const ProfileBannerHeader = ({ coverSrc, avatarSrc, isEditable }) => {
 ProfileBannerHeader.propTypes = {
   coverSrc: PropTypes.string.isRequired,
   avatarSrc: PropTypes.string,
-  isEditable: PropTypes.bool
+  isEditable: PropTypes.bool,
 };
 
-ProfileBannerHeader.defaultProps = { isEditable: false };
+ProfileBannerHeader.defaultProps = {isEditable: false};
 
 export default ProfileBannerHeader;

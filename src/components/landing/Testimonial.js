@@ -4,6 +4,7 @@ import Section from '../common/Section';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import AntlerCard from '../properties/antler/AntlerCard';
 
 const Testimonial = () => (
   <Section className="text-center">
@@ -15,6 +16,11 @@ const Testimonial = () => (
             cities.
           </p>
         </div>
+      </Col>
+    </Row>
+    <Row className="mt-5">
+      <Col xs="12" lg="6">
+        <AntlerCard />
       </Col>
     </Row>
   </Section>
