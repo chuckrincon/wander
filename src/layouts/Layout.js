@@ -1,17 +1,17 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {toast, ToastContainer} from 'react-toastify';
-import {CloseButton, Fade} from '../components/common/Toast';
+import Landing from '../components/landing/Landing';
+import Antler from '../components/properties/antler/Antler';
 
-import loadable from '@loadable/component';
-const Landing = loadable(() => import('../components/landing/Landing'));
-const Antler = loadable(() => import('../components/properties/antler/Antler'));
+// import loadable from '@loadable/component';
+// const Landing = loadable(() => import('../components/landing/Landing'));
+// const Antler = loadable(() => import('../components/properties/antler/Antler'));
 
 const Layout = () => {
-  useEffect(() => {
-    Landing.preload();
-    Antler.preload();
-  }, []);
+  // useEffect(() => {
+  //   Landing.preload();
+  //   Antler.preload();
+  // }, []);
 
   return (
     <Router fallback={<span />}>
@@ -19,11 +19,6 @@ const Layout = () => {
         <Route path="/antler" exact component={Antler} />
         <Route component={Landing} />
       </Switch>
-      <ToastContainer
-        transition={Fade}
-        closeButton={<CloseButton />}
-        position={toast.POSITION.BOTTOM_LEFT}
-      />
     </Router>
   );
 };
