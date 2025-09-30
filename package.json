@@ -15,7 +15,7 @@
     "echarts": "^4.2.1",
     "echarts-for-react": "^2.0.15-beta.0",
     "google-maps-react": "^2.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "prism-react-renderer": "^0.1.7",
     "prism-themes": "^1.1.0",
